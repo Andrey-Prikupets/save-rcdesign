@@ -1,8 +1,8 @@
 {
   "name": "save-rcdesign",
   "version": "1.0.0",
-  "description": "Script to return paged forum page as a whole",
-  "main": "WebLoader.js",
+  "description": "Script to return paged rcdesign.ru forum page as a whole",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"

@@ -27,25 +27,12 @@ var CHUNK = false;
 var ipaddr = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
-var LOG_PATH = process.env.OPENSHIFT_NODEJS_DIR || null;
-var LOG_FILE = "logs/node.log";
-
 app.get('/ping', function(req, res) {
 //  res.writeHead(200, {'Content-Type': 'text/html'});
   res.header("Content-Type", "text/html");
   res.charset = "utf8";
   res.write("<H1>Currently is "+(new Date())+"</H1>\n\n");
   res.end("Your IP address seems to be <B>" +ipaddr+":"+port+"</B>\n"); 
-});
-
-app.get('/wannAlogNOW', function(req, res) {
-  logDate("------------- Log requested...");
-  res.header("Content-Type", "text/plain");
-  if (LOG_PATH == null) {
-    res.end("No Log available");
-  } else {
-    fs.createReadStream(LOG_PATH+LOG_FILE).pipe(res);
-  }
 });
 
 function logDate(s) {
