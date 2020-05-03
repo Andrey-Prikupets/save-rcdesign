@@ -18,7 +18,7 @@ var tplFooter = jsontemplate.Template(fs.readFileSync(FOOTER_FILENAME, "utf8"));
 
 var outFolder = "./out/";
 
-var DEBUG = false;
+var DEBUG = true;
 var TRACE = false;
 var INFO  = true;
 var FILE  = false;
@@ -625,7 +625,9 @@ function makeFileName(url, ext) {
 
 //----------------------------------------------------------------------------------------------
 
-logDate("port: "+port+", IP: "+ipaddr);
+logDate("App started; port: "+port+", IP: "+ipaddr);
 
 server.listen(port, ipaddr);
+
+logDate("App exited");
 
