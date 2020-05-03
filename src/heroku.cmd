@@ -1,0 +1,1 @@
+call "C:\Program Files\heroku\bin\heroku.cmd" %*
