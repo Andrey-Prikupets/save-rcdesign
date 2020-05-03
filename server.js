@@ -30,8 +30,7 @@ app.get('/ping', function(req, res) {
 //  res.writeHead(200, {'Content-Type': 'text/html'});
   res.header("Content-Type", "text/html");
   res.charset = "utf8";
-  res.write("<H1>Currently is "+(new Date())+"</H1>\n\n");
-  res.end("Your IP address seems to be <B>" +ipaddr+":"+port+"</B>\n"); 
+  res.end("<H1>Currently is "+(new Date())+"</H1>\n\n");
 });
 
 function logDate(s) {
