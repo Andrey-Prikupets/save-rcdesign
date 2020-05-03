@@ -24,8 +24,7 @@ var INFO  = true;
 var FILE  = false;
 var CHUNK = false;
 
-var ipaddr = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var port = process.env.PORT || 8080;
 
 app.get('/ping', function(req, res) {
 //  res.writeHead(200, {'Content-Type': 'text/html'});
@@ -625,9 +624,9 @@ function makeFileName(url, ext) {
 
 //----------------------------------------------------------------------------------------------
 
-logDate("App started; port: "+port+", IP: "+ipaddr);
+logDate("App started; port: "+port);
 
-server.listen(port, ipaddr);
+server.listen(port);
 
 logDate("App exited");
 
